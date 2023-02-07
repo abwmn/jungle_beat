@@ -25,13 +25,24 @@ RSpec.describe JungleBeat do
     expect(jb.list.to_string).to eq("deep boop la deep")
     expect(jb.append("tee, Dee")).to eq(2)
     expect(jb.list.to_string).to eq("deep boop la deep tee dee")
-    
   end
 
   it 'can play' do
     jb = JungleBeat.new
 
-    jb.append("deep, doop, meep, moop")
+    jb.append("deep, boop, la merp   na +MIssissiPPPPi")
+    expect(jb.all).to eq("deep boop la na")
+    expect(jb.rate).to eq(500)
+    expect(jb.voice).to eq("Boing")
     jb.play
+    #expect computer to say "deep boop la na"
+    jb.rate = 100
+    jb.voice = "Kathy"
+    jb.play
+    #expect computer to repeat the phrase slow in Kathy's voice
+    jb.reset_rate
+    jb.reset_voice
+    jb.play
+    #expect computer to repeat the phrase fast in Boing voice
   end
 end

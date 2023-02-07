@@ -89,7 +89,9 @@ class LinkedList
   def pop 
     node = @head
     last_node = nil
-    if node.next_node.nil?
+    if node.nil?
+      nil
+    elsif node.next_node.nil?
       deleted = node.data
       @head = nil
       return deleted
