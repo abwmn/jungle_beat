@@ -14,7 +14,7 @@ class JungleBeat
     valid = ["tee", "dee", "deep", "bop", "boop", "la", "na"]
     beats_added = 0
     (0...(a.length)).each do |i|
-      beat = a[i].gsub(/[^a-z]/i, '')
+      beat = a[i].gsub(/[^a-z]/i, '').downcase
       if valid.include?(beat)
         self.list.append(beat) 
         beats_added +=1
@@ -28,7 +28,7 @@ class JungleBeat
     valid = ["tee", "dee", "deep", "bop", "boop", "la", "na"]
     beats_added = 0
     (0...(a.length)).each do |i|
-      beat = a[i].gsub(/[^a-z]/i, '')
+      beat = a[i].gsub(/[^a-z]/i, '').downcase
       if valid.include?(beat)
         self.list.prepend(beat) 
         beats_added +=1

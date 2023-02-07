@@ -21,6 +21,10 @@ RSpec.describe JungleBeat do
     expect(jb.list.to_string).to eq("deep boop la")
     expect(jb.list.count).to eq(3)
     expect(jb.append("Mississippi")).to eq(0)
+    expect(jb.append("234098deep{}{@#(*)}")).to eq(1)
+    expect(jb.list.to_string).to eq("deep boop la deep")
+    expect(jb.append("tee, Dee")).to eq(2)
+    expect(jb.list.to_string).to eq("deep boop la deep tee dee")
     
   end
 
