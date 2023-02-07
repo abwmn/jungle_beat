@@ -48,9 +48,9 @@ class LinkedList
   end
 
   def prepend(data)
-    swap = @head
+    old_head = @head
     @head = Node.new(data)
-    @head.next_node = swap
+    @head.next_node = old_head
   end
 
   def insert(pos, data)
