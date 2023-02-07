@@ -128,6 +128,8 @@ RSpec.describe LinkedList do
   it 'can pop' do
     list = LinkedList.new
 
+    expect(list.pop).to eq(nil)
+
     list.append("Deep")
     expect(list.pop).to eq("Deep")
     expect(list.head).to eq(nil)

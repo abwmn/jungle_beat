@@ -7,16 +7,17 @@ class LinkedList
     @head = nil
   end
 
-  def last(node)
-    return node if node.next_node.nil?
-    node = last(node.next_node)
-  end
-
   def append(data)
-    if @head.nil?
+    node = @head
+    last_node = nil
+    if node.nil?
       @head = Node.new(data)
     else
-      last(@head).next_node = Node.new(data)
+      until node.nil?
+        last_node = node
+        node = node.next_node
+      end
+      last_node.next_node = Node.new(data)
     end
     data
   end
@@ -92,9 +93,9 @@ class LinkedList
     if node.nil?
       nil
     elsif node.next_node.nil?
-      deleted = node.data
+      data = node.data
       @head = nil
-      return deleted
+      return data
     else
       until node.next_node.nil?
         last_node = node
