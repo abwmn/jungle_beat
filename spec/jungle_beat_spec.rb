@@ -12,18 +12,16 @@ RSpec.describe JungleBeat do
   end
 
   it 'can append' do
-    jb = JungleBeat.new
+    jb = JungleBeat.new("deep")
 
-    jb.append("deep")
     expect(jb.list.head).to be_a(Node)
     expect(jb.list.head.data).to eq("deep")
     expect(jb.list.count).to eq(1)
-    jb.append("doop boop")
-    expect(jb.list.to_string).to eq("deep doop boop")
+    expect(jb.append("doop boop la")).to eq(2)
+    expect(jb.list.to_string).to eq("deep boop la")
     expect(jb.list.count).to eq(3)
-    jb.append("meep moop loop stoop")
-    expect(jb.list.to_string).to eq("deep doop boop meep moop loop stoop")
-    expect(jb.list.count).to eq(7)
+    expect(jb.append("Mississippi")).to eq(0)
+    
   end
 
   it 'can play' do
