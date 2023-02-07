@@ -83,6 +83,10 @@ RSpec.describe LinkedList do
     list = LinkedList.new
     list.insert(5, "hope")
     expect(list.to_string).to eq("hope")
+    list.insert(-1, "pray")
+    expect(list.to_string).to eq("pray hope")
+    list.insert(-100, "plead")
+    expect(list.to_string).to eq("plead pray hope")
   end
 
   it 'can find' do

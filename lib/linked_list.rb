@@ -56,6 +56,8 @@ class LinkedList
   def insert(pos, data)
     if self.count <= pos 
       self.append(data)
+    elsif -(self.count) >= pos
+      self.prepend(data)
     else
       node = @head
       last_node = nil
@@ -105,5 +107,5 @@ class LinkedList
       node.data
     end
   end
-  
+
 end
