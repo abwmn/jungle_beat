@@ -27,7 +27,7 @@ class JungleBeat
 
   def prepend(data)
     a = data.split(' ')
-    valid = ["tee", "dee", "deep", "bop", "boop", "la", "na"]
+    valid = ["tee", "dee", "deep", "bop", "boop", "la", "na", "dop"]
     beats_added = 0
     (0...(a.length)).each do |i|
       beat = a[i].gsub(/[^a-z]/i, '').downcase

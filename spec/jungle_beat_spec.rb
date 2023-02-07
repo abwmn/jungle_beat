@@ -27,7 +27,28 @@ RSpec.describe JungleBeat do
     expect(jb.list.to_string).to eq("deep boop la deep tee dee")
   end
 
-  it 'can play' do
+  it 'can prepend' do
+    jb = JungleBeat.new("deep")
+
+    jb.prepend("dop")
+    expect(jb.list.head.data).to eq("dop")
+    jb.prepend("na na na")
+    expect(jb.list.head.data).to eq("na")
+  end
+
+  it 'can count its sounds' do
+    jb = JungleBeat.new("deep dop boop la")
+
+    expect(jb.count).to eq(4)
+  end
+
+  it 'can print self to string' do
+    jb = JungleBeat.new("deep dop boop la")
+
+    expect(jb.all).to eq("deep dop boop la")
+  end
+
+  it 'can play with rate and voice management' do
     jb = JungleBeat.new
 
     jb.append("deep, boop, la merp   na +MIssissiPPPPi")
