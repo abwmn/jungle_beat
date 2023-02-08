@@ -8,33 +8,37 @@ class JungleBeat
     @list = LinkedList.new
     @rate = rate
     @voice = voice
-    @valid = ["tee", "dee", "deep", "bop", "boop", "la", "na", "dop"]
     self.append(data) if data != nil
   end
 
-  def append(data)
-    a = data.split(' ')
-    beats_added = 0
-    (0...(a.length)).each do |i|
-      beat = a[i].gsub(/[^a-z]/i, '').downcase
-      if @valid.include?(beat)
-        self.list.append(beat) 
-        beats_added +=1
-      end 
+  def validate(data)
+    valid = ["tee", "dee", "deep", "bop", "boop", "la", "na", "dop"]
+    to_validate = data.split(' ')
+    validated = []
+    to_validate.each do |beat|
+      sleek_beat = beat.gsub(/[^a-z]/i, '').downcase
+      if valid.include?(sleek_beat)
+        validated << sleek_beat
+      end
     end
+    validated
+  end
+
+  def append(data)
+    beats_added = 0
+    validate(data).each do |beat|
+      self.list.append(beat) 
+      beats_added +=1
+    end 
     beats_added
   end
 
   def prepend(data)
-    a = data.split(' ')
     beats_added = 0
-    (0...(a.length)).each do |i|
-      beat = a[i].gsub(/[^a-z]/i, '').downcase
-      if @valid.include?(beat)
-        self.list.prepend(beat) 
-        beats_added +=1
-      end 
-    end
+    validate(data).each do |beat|
+      self.list.prepend(beat) 
+      beats_added +=1
+    end 
     beats_added
   end
 
