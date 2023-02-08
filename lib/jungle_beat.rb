@@ -35,7 +35,7 @@ class JungleBeat
 
   def prepend(data)
     beats_added = 0
-    validate(data).each do |beat|
+    validate(data).reverse().each do |beat|
       self.list.prepend(beat) 
       beats_added +=1
     end 

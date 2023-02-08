@@ -38,7 +38,7 @@ RSpec.describe JungleBeat do
     expect(jb.prepend("234098deep{}{@#(*)}")).to eq(1)
     expect(jb.list.to_string).to eq("deep na na na dop deep")
     expect(jb.prepend("tee dee dee")).to eq(3)
-    expect(jb.list.to_string).to eq("dee dee tee deep na na na dop deep")
+    expect(jb.list.to_string).to eq("tee dee dee deep na na na dop deep")
   end
 
   it 'can count its sounds' do
