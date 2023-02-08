@@ -107,5 +107,4 @@ class LinkedList
       node.data
     end
   end
-
 end

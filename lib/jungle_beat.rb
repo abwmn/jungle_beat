@@ -58,5 +58,4 @@ class JungleBeat
   def reset_voice
     self.voice = "Boing"
   end
-
 end
