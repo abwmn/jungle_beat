@@ -2,7 +2,7 @@ require "./lib/linked_list"
 require "./lib/node"
 
 class JungleBeat
-  attr_accessor :list, :data, :rate, :voice, :valid
+  attr_accessor :list, :data, :rate, :voice
 
   def initialize(data=nil, rate=500, voice="Boing")
     @list = LinkedList.new
