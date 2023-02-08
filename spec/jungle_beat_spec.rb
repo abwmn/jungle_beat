@@ -62,10 +62,14 @@ RSpec.describe JungleBeat do
     expect(jb.list.to_string).to eq("tee dee dee deep na na na dop deep")
   end
 
-  it 'can count its sounds' do
+  it 'can count its validated sounds' do
     jb = JungleBeat.new("deep dop boop la")
 
     expect(jb.count).to eq(4)
+
+    jb = JungleBeat.new("deep derp dope doop doo DEEP doot!")
+
+    expect(jb.count).to eq(5)
   end
 
   it 'can print self to string' do
