@@ -9,9 +9,30 @@ RSpec.describe JungleBeat do
     expect(jb).to be_instance_of(JungleBeat)
     expect(jb.list).to be_a(LinkedList)
     expect(jb.list.head).to eq(nil)
+    expect(jb.rate).to eq(500)
+    expect(jb.voice).to eq("Boing")
+    expect(jb.all).to eq('')
+
+    jb = JungleBeat.new("deep")
+  
+    expect(jb).to be_instance_of(JungleBeat)
+    expect(jb.list).to be_a(LinkedList)
+    expect(jb.list.head).to be_a(Node)
+    expect(jb.rate).to eq(500)
+    expect(jb.voice).to eq("Boing")
+    expect(jb.all).to eq("deep")
+    
+    jb = JungleBeat.new("deep doop blimp", 100, "Kathy")
+
+    expect(jb).to be_instance_of(JungleBeat)
+    expect(jb.list).to be_a(LinkedList)
+    expect(jb.list.head).to be_a(Node)
+    expect(jb.rate).to eq(100)
+    expect(jb.voice).to eq("Kathy")
+    expect(jb.all).to eq("deep doop")
   end
 
-  it 'can append' do
+  it 'can append validated data' do
     jb = JungleBeat.new("deep")
 
     expect(jb.list.head).to be_a(Node)
@@ -27,7 +48,7 @@ RSpec.describe JungleBeat do
     expect(jb.list.to_string).to eq("deep boop la deep tee dee")
   end
 
-  it 'can prepend' do
+  it 'can prepend validated data' do
     jb = JungleBeat.new("deep")
 
     jb.prepend("dop")

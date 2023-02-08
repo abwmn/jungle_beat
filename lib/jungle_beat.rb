@@ -8,7 +8,7 @@ class JungleBeat
     @list = LinkedList.new
     @rate = rate
     @voice = voice
-    append(data) if data
+    self.append(data) if data
   end
 
   def validate(data)
