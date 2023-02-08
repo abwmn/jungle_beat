@@ -32,7 +32,7 @@ RSpec.describe JungleBeat do
     expect(jb.all).to eq("deep doop")
   end
 
-  it 'can append' do
+  it 'can append validated data' do
     jb = JungleBeat.new("deep")
 
     expect(jb.list.head).to be_a(Node)
@@ -48,7 +48,7 @@ RSpec.describe JungleBeat do
     expect(jb.list.to_string).to eq("deep boop la deep tee dee")
   end
 
-  it 'can prepend' do
+  it 'can prepend validated data' do
     jb = JungleBeat.new("deep")
 
     jb.prepend("dop")
