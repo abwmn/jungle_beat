@@ -2,22 +2,22 @@ require "./lib/linked_list"
 require "./lib/node"
 
 class JungleBeat
-  attr_accessor :list, :data, :rate, :voice
+  attr_accessor :list, :data, :rate, :voice, :valid
 
   def initialize(data=nil, rate=500, voice="Boing")
     @list = LinkedList.new
     @rate = rate
     @voice = voice
+    @valid = ["tee", "dee", "deep", "bop", "boop", "la", "na", "dop"]
     self.append(data) if data != nil
   end
 
   def append(data)
     a = data.split(' ')
-    valid = ["tee", "dee", "deep", "bop", "boop", "la", "na", "dop"]
     beats_added = 0
     (0...(a.length)).each do |i|
       beat = a[i].gsub(/[^a-z]/i, '').downcase
-      if valid.include?(beat)
+      if @valid.include?(beat)
         self.list.append(beat) 
         beats_added +=1
       end 
@@ -27,11 +27,10 @@ class JungleBeat
 
   def prepend(data)
     a = data.split(' ')
-    valid = ["tee", "dee", "deep", "bop", "boop", "la", "na", "dop"]
     beats_added = 0
     (0...(a.length)).each do |i|
       beat = a[i].gsub(/[^a-z]/i, '').downcase
-      if valid.include?(beat)
+      if @valid.include?(beat)
         self.list.prepend(beat) 
         beats_added +=1
       end 
