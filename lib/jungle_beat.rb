@@ -2,13 +2,13 @@ require "./lib/linked_list"
 require "./lib/node"
 
 class JungleBeat
-  attr_accessor :list, :data, :rate, :voice
+  attr_accessor :list, :rate, :voice
 
   def initialize(data=nil, rate=500, voice="Boing")
     @list = LinkedList.new
     @rate = rate
     @voice = voice
-    self.append(data) if data != nil
+    append(data) if data
   end
 
   def validate(data)
