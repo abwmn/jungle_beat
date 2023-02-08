@@ -17,7 +17,7 @@ RSpec.describe JungleBeat do
     expect(jb.list.head).to be_a(Node)
     expect(jb.list.head.data).to eq("deep")
     expect(jb.list.count).to eq(1)
-    expect(jb.append("doop boop la")).to eq(2)
+    expect(jb.append("dope boop la")).to eq(2)
     expect(jb.list.to_string).to eq("deep boop la")
     expect(jb.list.count).to eq(3)
     expect(jb.append("Mississippi")).to eq(0)
