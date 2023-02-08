@@ -12,7 +12,7 @@ class JungleBeat
   end
 
   def validate(data)
-    valid = ["tee", "dee", "deep", "bop", "boop", "la", "na", "dop"]
+    valid = ["tee", "dee", "deep", "bop", "boop", "la", "na", "dop", "doop", "meep", "moop", "doot", "dot", "be", "bop", "hip", "hop", "choo", "coo", "doo", "do", "beep"]
     to_validate = data.split(' ')
     validated = []
     to_validate.each do |beat|
